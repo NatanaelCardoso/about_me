@@ -1,0 +1,360 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #0d007e;
+    --primaryrgba: #13068a79;
+    --secondary: #c0661d;
+    --secondaryrgba: #c0661d60;
+    --dark: #010016;
+    --moredarknes: #01000a;
+    --light: #F5F5F7;
+    --glass: #e2e8f017;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.language-selector {
+    /* POSICIONAMENTO */
+    position: fixed; /* Fixa o elemento na tela */
+    top: 20px;       /* Distância do topo */
+    right: 20px;     /* Distância da direita */
+    z-index: 1000;   /* Garante que fique acima de todos os outros elementos */
+
+    /* ALINHAMENTO INTERNO E ESTILO */
+    display: flex;
+    gap: 10px;       /* Espaçamento entre as bandeiras */
+}
+
+.language-selector img {
+    width: 30px;      /* Tamanho da bandeira */
+    height: 30px;
+    border-radius: 50%; /* Opcional: faz a bandeira ficar redonda */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    object-fit: cover;
+    border: 2px solid transparent; /* Padrão, sem destaque */
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.language-selector img.active {
+    /* Destaque para o idioma que está ativo */
+    border-color: #f7a049; 
+    transform: scale(1.05);
+}
+
+.language-selector img:hover {
+    opacity: 0.8; 
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient(circle at 10% 20%, var(--primary) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secondary) 0%, transparent 20%), var(--dark);
+
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    background-color: #010016e7;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+
+.menu {
+   display: flex;
+   list-style: none;
+   gap: 3rem;
+   justify-content: center;
+}
+.link-menu {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.link-menu::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: 0.7s;
+
+}
+
+.link-menu:hover::after {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 15px;
+}
+
+.hero-2 {
+    font-size: 1.3rem;
+    color: var(--light);
+}
+
+.profile-picture {
+    width: 300px;
+    right: 300px;
+    border-radius: 50%;
+    border: 3px solid var(--glass);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.25);
+    background-color: var(--glass);
+    animation: fly 5s ease-in-out infinite;
+}
+
+.about {
+    padding: 4rem 2rem; 
+    text-align: center;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: var(--light);
+    padding: 0.5rem;
+}
+
+
+.box-about {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid var(--glass); 
+    background-color: var(--glass);
+    backdrop-filter: blur(15px);
+}
+
+.about-paragraph {
+    font-size: 1.3rem;
+    font-weight: normal;
+    text-align: justify;
+}
+
+
+.projects {
+    padding: 6rem 2rem;
+}
+
+.title-project {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 2.5rem;
+}
+
+.project-card:hover {
+    box-shadow: 10px 5px 5px var(--primaryrgba);
+    transform: translateY(-10px) scale(1.03);
+
+
+}
+
+.project-card {
+    background: var(--glass);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass);
+    overflow: hidden;
+    transition: 0.5s all ease;
+    cursor: pointer;
+    width: 100%;
+}
+
+.box-project{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3.2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.img-project{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box-paragraph{
+    padding: 1.5rem;
+
+}
+
+.project-title {
+    padding-bottom: 5px;
+}
+
+.project-paragraph {
+    color: rgba(226, 232, 240, 0.9);
+    line-height: 1.25rem;
+}
+
+.contact {
+    padding: 6rem 2rem;
+}
+
+.title-contact {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 3.5rem
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid var(--glass);
+    overflow: hidden;
+    transition: 0.5s all ease;
+    padding: 3rem;
+}
+
+.form:hover {
+    box-shadow: 10px 5px 5px var(--primaryrgba);
+    transform: translateY(-10px) scale(1.03);
+
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-field {
+    width: 100%;
+    padding: 1rem;
+    background: var(--glass);
+    border-radius: 8px;
+    color: var(--light);
+    border: 1px solid var(--glass);
+    cursor: text;
+    outline: none;
+}
+
+.form-field:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
+}
+
+.form-button {
+    font-size: medium;
+    width: 100%;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid var(--glass);
+    align-items: center;
+    color: var(--light);
+    background: #0D007E;
+background: linear-gradient(90deg,rgba(13, 0, 126, 1) 0%, rgba(139, 98, 222, 1) 80%);
+    transition: all 0.5s ease ;
+
+}
+
+.form-button:hover {
+    box-shadow: 10px 5px 5px var(--primaryrgba);
+    transform: translateY(-5px) 
+}
+
+/* Estilizando o contêiner principal do rodapé */
+.footer {
+    display: flex; /* Habilita o Flexbox */
+    flex-direction: column; /* Organiza os itens (parágrafo e ícones) em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente (para o bloco de texto e a div de ícones) */
+    justify-content: center; /* Centraliza os itens verticalmente (se o footer tiver altura definida) */
+    
+    padding: 2rem; /* Espaçamento interno */
+    width: 100%; /* Ocupa a largura total */
+    background-color: var(--cor-de-fundo-escura); /* Exemplo: use a cor do seu site */
+}
+
+/* Centralizando os ícones dentro da div 'contact-info' */
+.contact-info {
+    display: flex; /* Habilita o Flexbox para os links */
+    gap: 15px; /* Adiciona espaço entre os ícones */
+    margin-top: 15px; /* Adiciona um espaço entre o parágrafo e os ícones */
+}
+
+/* Estilo para o texto */
+.footer-p {
+    color: white; /* Cor do texto */
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    padding: 30px; /* Remove margem padrão para controlar o espaçamento com margin-top em .contact-info */
+}
+
+.contact-info img {
+    height: 50px; /* Define um tamanho para o ícone */
+    width: 50px;
+    
+    /* * EFEITO PARA TORNAR ÍCONES PRETOS OU CINZAS EM BRANCO 
+     * O 'invert(1)' inverte a cor.
+     * O 'sepia(1)' e 'saturate(0)' eliminam o tom de cor.
+     * O 'brightness(100)' e 'contrast(100)' garantem o branco puro.
+     */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    
+    /* Adiciona uma transição para um efeito hover suave (opcional) */
+    transition: filter 0.3s ease;
+}
+
+/* Efeito de hover (opcional: para escurecer ou dar um toque de cor) */
+.contact-info a:hover img {
+    filter: invert(70%); /* Exemplo: escurece um pouco ao passar o mouse */
+}
+
+.aa {
+    padding: 3rem ;
+    text-align: center;
+
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

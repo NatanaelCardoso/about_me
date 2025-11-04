@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Natanael Nascimento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="script.js"></script>
+
+<body>
+    <div class="language-selector">
+
+        <img class="language-selector-br"
+            src="img/brazil_icon.png"
+            alt="Bandeira do Brasil - Português"
+            onclick="mudarIdioma('pt')"
+            data-lang="pt">
+
+        <img class="language-selector-eua"
+            src="img/united_states_icon.png"
+            alt="Bandeira dos EUA - Inglês"
+            onclick="mudarIdioma('en')"
+            data-lang="en">
+
+    >
+    </div>
+    <div class="particles
+"></div>
+    <nav class="navigation">
+        <ul class="menu">
+            <li><a class="link-menu" href="#home">Home</a></li>
+            <li><a class="link-menu" href="#about">About</a></li>
+            <li><a class="link-menu" href="#projects">Projects</a></li>
+            <li><a class="link-menu" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="home" class="header">
+        <div class="hero-content">
+            <img src="img/my_profile.png" alt="Natanael Nascimento" class="profile-picture">
+            <h1>Natanael Nascimento</h1>
+            <h2 class="hero-h2">Dev Front end👨‍💻</h2>
+            <p >Creating beautiful and functional web experiences</p>
+        </div>
+    </main>
+
+    <section id="about" class="about">
+        <h2 class="about-title">About Me</h2>
+        <div class="box-about">    
+            <p class="about-paragraph">I'm a passionate front-end developer focused on building modern, responsive, and user-friendly web applications. I love turning ideas into reality through clean code and intuitive design.</p>
+        </div>    
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="title-project">Projects</h2>
+        <div class="box-project">
+            <div class="project-card">
+                <img class="img-project" src="img/Dev Front end  Python and AI.png" alt="">
+                <div class="box-paragraph">
+                    <h3 class="project-title">Project 1</h3>
+                    <p class="project-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam atque culpa, officiis fugiat tempore fugit, architecto at maiores vero corporis suscipit quo autem tenetur perferendis eligendi! Repellendus doloremque harum nesciunt?</p>
+                    <a href="#" class="project-link"></a>
+                </div>
+            </div>
+            <div class="project-card">               
+                <img class="img-project" src="img/Dev Front end  Python and AI.png" alt="">
+                <div class="box-paragraph">
+                    <h3 class="project-title">Project 2</h3>
+                    <p class="project-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aliquid quibusdam maiores architecto quae quos ut nemo dicta magni repudiandae veniam ratione corrupti voluptatibus perferendis quam unde, fugiat quaerat eligendi!</p>
+                    <a href="" class="project-link"></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img class="img-project" src="img/Dev Front end  Python and AI.png" alt="">
+                <div class="box-paragraph">
+                    <h3 class="project-title">Project 3</h3>
+                    <p class="project-paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae odit assumenda quibusdam adipisci nam id nisi similique sint nobis libero fuga, impedit dolor, dignissimos voluptate est. Quia, ipsa vero?</p>
+                    <a href="#" class="project-link"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="title-contact">Contact us</h2>
+        <form class="form" id="form">
+            <div class="form-group">
+                <input type="text" placeholder="Name" class="form-field">
+            </div>
+
+            <div class="form-group">
+                <textarea placeholder="Type your menssage" class="form-field"></textarea>
+            </div>
+            <button type="button" class="form-button" onclick="enviarWhatsApp()">Send Whatsapp</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <p class="footer-p">Let's work together!</p>
+            <div class="contact-info">
+                <a href="mailto:devnatanael.nascimento@gmail.com">  
+                    <img src="data:image/png;base64,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" alt=""></a>
+                <a href="https://github.com/NatanaelCardoso?tab=repositories" target="_blank"> 
+                    <img src="data:image/png;base64,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" alt=""></a>
+                <a href="https://www.linkedin.com/in/natanael-nascimento-a89508259/" target="_blank"> 
+                    <img src="data:image/png;base64,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" alt="linkedin icon"></a>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="aa">
+        <p>&copy; 2025 Natanael Nascimento. All rights reserved.</p>
+    </footer>
+</body>
+</html>
