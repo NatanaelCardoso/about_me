@@ -8,13 +8,14 @@ const textos = {
     contact: "Contato",
     aboutTitle: "Sobre Mim",
     aboutParagraph:
-      "Sou um desenvolvedor front-end apaixonado por criar aplicações modernas, responsivas e intuitivas. Adoro transformar ideias em realidade através de código limpo e design funcional.",
+      "Sou um desenvolvedor front-end apaixonado por criar aplicações modernas, responsivas e intuitivas. Adoro transformar ideias em realidade através de código limpo e design funcional. Meu interesse constante em estudar e aprender coisas novas, como diferentes linguagens e tecnologias, me permite aprimorar continuamente minha bagagem de conhecimento e garantir que eu entregue o meu melhor em todos os projetos. ",
     projectsTitle: "Projetos",
     contactTitle: "Entre em contato",
     footerText: "Vamos trabalhar juntos!",
     sendButton: "Enviar pelo WhatsApp",
     placeholderName: "Nome",
     placeholderMessage: "Digite sua mensagem",
+    main_description: "Criando experiências web funcionais e bonitas",
   },
   en: {
     home: "Home",
@@ -23,13 +24,14 @@ const textos = {
     contact: "Contact",
     aboutTitle: "About Me",
     aboutParagraph:
-      "I'm a passionate front-end developer focused on building modern, responsive, and user-friendly web applications. I love turning ideas into reality through clean code and intuitive design.",
+      "I am a front-end developer passionate about creating modern, responsive, and intuitive applications. I love turning ideas into reality through clean code and functional design. My constant interest in studying and learning new things, such as different languages and technologies, allows me to continuously improve my knowledge base and ensure I deliver my best in every project.",
     projectsTitle: "Projects",
     contactTitle: "Contact us",
     footerText: "Let's work together!",
     sendButton: "Send Whatsapp",
     placeholderName: "Name",
     placeholderMessage: "Type your message",
+    main_description: "Creating beautiful and functional web experiences",
   },
 };
 
