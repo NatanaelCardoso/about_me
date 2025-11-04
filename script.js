@@ -78,8 +78,8 @@ function enviarWhatsApp() {
     return;
   }
 
-  // ✅ Coloque aqui o SEU número de WhatsApp (somente números)
-  const telefone = "5583996303794"; // exemplo: 55 + DDD + número
+
+  const telefone = "5583996303794"; 
 
   // Cria o texto que será enviado
   const texto = `Olá! Meu nome é ${nome || "visitante"}. ${mensagem}`;

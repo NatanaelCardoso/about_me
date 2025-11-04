@@ -358,3 +358,48 @@ background: linear-gradient(90deg,rgba(13, 0, 126, 1) 0%, rgba(139, 98, 222, 1) 
         transform: translateY(-20px);
     }
 }
+
+
+/* ======== RESPONSIVIDADE ======== */
+
+/* Tablets e celulares grandes */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .box-project {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Celulares médios e pequenos */
+
+@media (max-width: 600px) {
+  nav.navigation {
+    padding: 1rem;
+  }
+
+  .menu {
+    flex-direction: column; /* empilha o menu */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profile-picture {
+    width: 70%;
+    max-width: 200px;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+
+  .title-contact {
+    font-size: 2rem;
+  }
+
+  .form {
+    padding: 1.5rem;
+  }
+}
