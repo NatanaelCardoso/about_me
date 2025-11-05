@@ -43,7 +43,7 @@ function mudarIdioma(lang) {
   document.querySelector('a[href="#projects"]').textContent = t.projects;
   document.querySelector('a[href="#contact"]').textContent = t.contact;
 
-  document.querySelector('.main_description"]').textContent = t.main_description;
+  document.querySelector('#main_description').textContent = t.main_description;
   document.querySelector(".about-title").textContent = t.aboutTitle;
   document.querySelector(".about-paragraph").textContent = t.aboutParagraph;
   document.querySelector(".title-project").textContent = t.projectsTitle;
