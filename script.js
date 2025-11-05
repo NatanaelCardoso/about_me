@@ -1,5 +1,5 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   const textos = {
     pt: {
       home: "Início",
@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img.classList.toggle('active', img.dataset.lang === lang);
     });
   }
+});
 
   // --- Inicialização: ler idioma salvo ou padrão
   const savedLang = localStorage.getItem("site_lang") || "pt";
