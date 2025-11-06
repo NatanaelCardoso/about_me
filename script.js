@@ -1,4 +1,3 @@
-// script.js
 
 const textos = {
   pt: {
@@ -35,26 +34,52 @@ const textos = {
   },
 };
 
+function safeQuery(selector) {
+  return document.querySelector(selector);
+}
+
 function mudarIdioma(lang) {
   const t = textos[lang];
+  if (!t) return;
 
-  document.querySelector('a[href="#home"]').textContent = t.home;
-  document.querySelector('a[href="#about"]').textContent = t.about;
-  document.querySelector('a[href="#projects"]').textContent = t.projects;
-  document.querySelector('a[href="#contact"]').textContent = t.contact;
+  const elHome = safeQuery('a[href="#home"]');
+  const elAbout = safeQuery('a[href="#about"]');
+  const elProjects = safeQuery('a[href="#projects"]');
+  const elContact = safeQuery('a[href="#contact"]');
 
-  document.querySelector('#main_description').textContent = t.main_description;
-  document.querySelector(".about-title").textContent = t.aboutTitle;
-  document.querySelector(".about-paragraph").textContent = t.aboutParagraph;
-  document.querySelector(".title-project").textContent = t.projectsTitle;
-  document.querySelector(".title-contact").textContent = t.contactTitle;
-  document.querySelector(".footer-p").textContent = t.footerText;
-  document.querySelector(".form-button").textContent = t.sendButton;
+  if (elHome) elHome.textContent = t.home;
+  if (elAbout) elAbout.textContent = t.about;
+  if (elProjects) elProjects.textContent = t.projects;
+  if (elContact) elContact.textContent = t.contact;
 
-  document.querySelector('input[placeholder]').placeholder = t.placeholderName;
-  document.querySelector('textarea[placeholder]').placeholder = t.placeholderMessage;
+  const mainDesc = safeQuery('#main_description');
+  if (mainDesc) mainDesc.textContent = t.main_description;
 
-  // Destaque visual da bandeira ativa
+  const aboutTitle = safeQuery('.about-title');
+  if (aboutTitle) aboutTitle.textContent = t.aboutTitle;
+
+  const aboutParagraph = safeQuery('.about-paragraph');
+  if (aboutParagraph) aboutParagraph.textContent = t.aboutParagraph;
+
+  const projectsTitle = safeQuery('.title-project');
+  if (projectsTitle) projectsTitle.textContent = t.projectsTitle;
+
+  const contactTitle = safeQuery('.title-contact');
+  if (contactTitle) contactTitle.textContent = t.contactTitle;
+
+  const footerP = safeQuery('.footer-p');
+  if (footerP) footerP.textContent = t.footerText;
+
+  const formButton = safeQuery('.form-button');
+  if (formButton) formButton.textContent = t.sendButton;
+
+  const inputName = safeQuery('input[placeholder]');
+  if (inputName) inputName.placeholder = t.placeholderName;
+
+  const textarea = safeQuery('textarea[placeholder]');
+  if (textarea) textarea.placeholder = t.placeholderMessage;
+
+
   document.querySelectorAll('.language-selector img').forEach(img => {
     img.classList.remove('active');
     if (img.getAttribute('data-lang') === lang) {
@@ -62,34 +87,42 @@ function mudarIdioma(lang) {
     }
   });
 
-  // Salvar idioma escolhido
   localStorage.setItem("lang", lang);
 }
 
-// Carregar idioma salvo
 document.addEventListener("DOMContentLoaded", () => {
+  // carregar idioma salvo
   const lang = localStorage.getItem("lang") || "en";
   mudarIdioma(lang);
+
+  // adicionar listeners nas bandeiras (caso não use onclick inline)
+  document.querySelectorAll('.language-selector img').forEach(img => {
+    img.addEventListener('click', () => {
+      const l = img.getAttribute('data-lang');
+      if (l) mudarIdioma(l);
+    });
+  });
+
+  // botão WhatsApp
+  const btn = document.getElementById('btn-whatsapp');
+  if (btn) {
+    btn.addEventListener('click', enviarWhatsApp);
+  }
 });
 
 function enviarWhatsApp() {
-  const nome = document.querySelector('input[placeholder]').value.trim();
-  const mensagem = document.querySelector('textarea[placeholder]').value.trim();
+  const nomeEl = document.querySelector('input[placeholder]');
+  const textoEl = document.querySelector('textarea[placeholder]');
+  const nome = nomeEl ? nomeEl.value.trim() : "";
+  const mensagem = textoEl ? textoEl.value.trim() : "";
 
   if (!mensagem) {
     alert("Por favor, digite uma mensagem antes de enviar.");
     return;
   }
 
-
-  const telefone = "5583996303794"; 
-
-  // Cria o texto que será enviado
+  const telefone = "5583996303794";
   const texto = `Olá! Meu nome é ${nome || "visitante"}. ${mensagem}`;
-
-  // Monta o link do WhatsApp com encode
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
-
-  // Abre o WhatsApp (em nova aba)
   window.open(url, "_blank");
 }
