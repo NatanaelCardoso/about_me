@@ -11,48 +11,49 @@
 <script src="script.js"></script>
 
 <body>
-    <div class="language-selector">
+  <div class="language-selector">
+    <img
+      class="language-selector-br"
+      src="img/brazil_icon.png"
+      alt="Bandeira do Brasil - Português"
+      data-lang="pt"
+    />
+    <img
+      class="language-selector-eua"
+      src="img/united_states_icon.png"
+      alt="Bandeira dos EUA - Inglês"
+      data-lang="en"
+    />
+  </div>
 
-        <img class="language-selector-br"
-            src="img/brazil_icon.png"
-            alt="Bandeira do Brasil - Português"
-            onclick="mudarIdioma('pt')"
-            data-lang="pt">
+  <div class="particles"></div>
 
-        <img class="language-selector-eua"
-            src="img/united_states_icon.png"
-            alt="Bandeira dos EUA - Inglês"
-            onclick="mudarIdioma('en')"
-            data-lang="en">
+  <nav class="navigation">
+    <ul class="menu">
+      <li><a class="link-menu" href="#home">Home</a></li>
+      <li><a class="link-menu" href="#about">About</a></li>
+      <li><a class="link-menu" href="#projects">Projects</a></li>
+      <li><a class="link-menu" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    >
+  <main id="home" class="header">
+    <div class="hero-content">
+      <img src="img/my_profile.png" alt="Natanael Cardoso" class="profile-picture"/>
+      <h1>Natanael Cardoso</h1>
+      <h2 class="hero-h2">Dev Front end👨‍💻</h2>
+      <p id="main_description">Creating beautiful and functional web experiences</p>
     </div>
-    <div class="particles
-"></div>
-    <nav class="navigation">
-        <ul class="menu">
-            <li><a class="link-menu" href="#home">Home</a></li>
-            <li><a class="link-menu" href="#about">About</a></li>
-            <li><a class="link-menu" href="#projects">Projects</a></li>
-            <li><a class="link-menu" href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  </main>
 
-    <main id="home" class="header">
-        <div class="hero-content">
-            <img src="img/my_profile.png" alt="Natanael Cardoso" class="profile-picture">
-            <h1>Natanael Cardoso</h1>
-            <h2 class="hero-h2">Dev Front end👨‍💻</h2>
-            <p  id="main_description">Creating beautiful and functional web experiences</p>
-        </div>
-    </main>
-
-    <section id="about" class="about">
-        <h2 class="about-title">About Me</h2>
-        <div class="box-about">    
-            <p class="about-paragraph">I am a front-end developer passionate about creating modern, responsive, and intuitive applications. I love turning ideas into reality through clean code and functional design. My constant interest in studying and learning new things, such as different languages and technologies, allows me to continuously improve my knowledge base and ensure I deliver my best in every project.</p>
-        </div>    
-    </section>
+  <section id="about" class="about">
+    <h2 class="about-title">About Me</h2>
+    <div class="box-about">
+      <p class="about-paragraph">
+        I am a front-end developer passionate about creating modern, responsive, and intuitive applications. I love turning ideas into reality through clean code and functional design. My constant interest in studying and learning new things, such as different languages and technologies, allows me to continuously improve my knowledge base and ensure I deliver my best in every project.
+      </p>
+    </div>
+  </section>
 
     <section id="projects" class="projects">
         <h2 class="title-project">Projects</h2>
@@ -115,5 +116,8 @@
     <footer class="aa">
         <p>&copy; 2025 Natanael Cardoso. All rights reserved.</p>
     </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>

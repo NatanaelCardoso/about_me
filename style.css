@@ -11,15 +11,17 @@ html {
 }
 
 :root {
-    --primary: #0d007e;
-    --primaryrgba: #13068a79;
-    --secondary: #c0661d;
-    --secondaryrgba: #c0661d60;
-    --dark: #010016;
-    --moredarknes: #01000a;
-    --light: #F5F5F7;
-    --glass: #e2e8f017;
+  --primary: #0d007e;
+  --primaryrgba: #13068a79;
+  --secondary: #c0661d;
+  --secondaryrgba: #c0661d60;
+  --dark: #010016;
+  --moredarknes: #01000a;
+  --light: #F5F5F7;
+  --glass: #e2e8f017;
+
 }
+
 
 body {
     background-color: var(--dark);
@@ -27,30 +29,30 @@ body {
 }
 
 .language-selector {
-    /* POSICIONAMENTO */
-    position: fixed; /* Fixa o elemento na tela */
-    top: 20px;       /* Distância do topo */
-    right: 20px;     /* Distância da direita */
-    z-index: 1000;   /* Garante que fique acima de todos os outros elementos */
+    
+    position: fixed; 
+    top: 20px;       
+    right: 20px;     
+    z-index: 1000;   
 
-    /* ALINHAMENTO INTERNO E ESTILO */
+    
     display: flex;
-    gap: 10px;       /* Espaçamento entre as bandeiras */
+    gap: 10px;       
 }
 
 .language-selector img {
-    width: 30px;      /* Tamanho da bandeira */
+    width: 30px;      
     height: 30px;
-    border-radius: 50%; /* Opcional: faz a bandeira ficar redonda */
+    border-radius: 50%; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer; 
     object-fit: cover;
-    border: 2px solid transparent; /* Padrão, sem destaque */
+    border: 2px solid transparent; 
     transition: border-color 0.2s, transform 0.2s;
 }
 
 .language-selector img.active {
-    /* Destaque para o idioma que está ativo */
+    
     border-color: #f7a049; 
     transform: scale(1.05);
 }
@@ -297,51 +299,43 @@ background: linear-gradient(90deg,rgba(13, 0, 126, 1) 0%, rgba(139, 98, 222, 1) 
     transform: translateY(-5px) 
 }
 
-/* Estilizando o contêiner principal do rodapé */
+
 .footer {
-    display: flex; /* Habilita o Flexbox */
-    flex-direction: column; /* Organiza os itens (parágrafo e ícones) em uma coluna */
-    align-items: center; /* Centraliza os itens horizontalmente (para o bloco de texto e a div de ícones) */
-    justify-content: center; /* Centraliza os itens verticalmente (se o footer tiver altura definida) */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
     
-    padding: 2rem; /* Espaçamento interno */
-    width: 100%; /* Ocupa a largura total */
-    background-color: var(--cor-de-fundo-escura); /* Exemplo: use a cor do seu site */
+    padding: 2rem; 
+    width: 100%; 
+    background-color: var(--cor-de-fundo-escura); 
 }
 
-/* Centralizando os ícones dentro da div 'contact-info' */
+
 .contact-info {
-    display: flex; /* Habilita o Flexbox para os links */
-    gap: 15px; /* Adiciona espaço entre os ícones */
-    margin-top: 15px; /* Adiciona um espaço entre o parágrafo e os ícones */
+    display: flex; 
+    gap: 15px; 
+    margin-top: 15px; 
 }
 
-/* Estilo para o texto */
+
 .footer-p {
-    color: white; /* Cor do texto */
+    color: white; 
     font-size: 1.1rem;
     margin-bottom: 0;
-    padding: 30px; /* Remove margem padrão para controlar o espaçamento com margin-top em .contact-info */
+    padding: 30px; 
 }
 
 .contact-info img {
-    height: 50px; /* Define um tamanho para o ícone */
+    height: 50px; 
     width: 50px;
-    
-    /* * EFEITO PARA TORNAR ÍCONES PRETOS OU CINZAS EM BRANCO 
-     * O 'invert(1)' inverte a cor.
-     * O 'sepia(1)' e 'saturate(0)' eliminam o tom de cor.
-     * O 'brightness(100)' e 'contrast(100)' garantem o branco puro.
-     */
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
-    
-    /* Adiciona uma transição para um efeito hover suave (opcional) */
     transition: filter 0.3s ease;
 }
 
-/* Efeito de hover (opcional: para escurecer ou dar um toque de cor) */
+
 .contact-info a:hover img {
-    filter: invert(70%); /* Exemplo: escurece um pouco ao passar o mouse */
+    filter: invert(70%); 
 }
 
 .aa {
@@ -360,9 +354,7 @@ background: linear-gradient(90deg,rgba(13, 0, 126, 1) 0%, rgba(139, 98, 222, 1) 
 }
 
 
-/* ======== RESPONSIVIDADE ======== */
 
-/* Tablets e celulares grandes */
 @media (max-width: 992px) {
   h1 {
     font-size: 2.5rem;
@@ -373,7 +365,7 @@ background: linear-gradient(90deg,rgba(13, 0, 126, 1) 0%, rgba(139, 98, 222, 1) 
   }
 }
 
-/* Celulares médios e pequenos */
+
 
 @media (max-width: 600px) {
   nav.navigation {
@@ -381,7 +373,7 @@ background: linear-gradient(90deg,rgba(13, 0, 126, 1) 0%, rgba(139, 98, 222, 1) 
   }
 
   .menu {
-    flex-direction: column; /* empilha o menu */
+    flex-direction: column; 
     align-items: center;
     gap: 1rem;
   }
